@@ -12,10 +12,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+//Subdomain routes
+Route::domain('{sub}.forinterstroy.dd')->group(function(){
+    Route::get('/',function(){return view('welcome');});
 });
-Route::get('/main',function(){
-    return 'main';
+
+Route::get('/',function(){
+    return view('welcome');
 });
