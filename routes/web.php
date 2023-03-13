@@ -17,6 +17,5 @@ Route::domain('{sub}.forinterstroy.dd')->group(function(){
     Route::get('/',function(){return view('welcome');});
 });
 
-Route::get('/',function(){
-    return view('welcome');
-});
+Route::get('/',function(){return view('index');});
+Route::get('/contact',function(){return view('contact');});
