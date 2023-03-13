@@ -12,9 +12,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 //Subdomain routes
-Route::domain('{sub}.forinterstroy.dd')->group(function(){
-    Route::get('/',function(){return view('welcome');});
+Route::domain('{sub}.' .env('APP_URL'))->group(function(){
+    Route::get('/',function($sub){
+        return $sub;
+    });
 });
 
 Route::get('/',function(){return view('index');});
