@@ -7,7 +7,7 @@
                     <p class="mb-0 text-muted">{{ $company->description }}</p>
                 </div>
                 <div class="col-6">
-                    <img src="{{ $company->logo }}" width="100%" alt="">
+                    <img src="{{ $company->logo }}" alt="{{ $company->name }}" style="max-height: 100px">
                 </div>
             </div>
         </div>
