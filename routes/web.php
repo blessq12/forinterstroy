@@ -17,5 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::domain(env('APP_URL'))->group(function(){
     Route::controller(MainController::class)->group(function(){
         Route::get('/', 'index')->name('index_page');
+        Route::get('contact', 'contact')->name('contact_page');
+        Route::get('/catalog' ,'catalog')->name('catalog_page');
+        Route::get('/portfoli' ,'portfolio')->name('portfolio_page');
     });
 });
