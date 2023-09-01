@@ -3,7 +3,8 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h2>Contact page</h2>
+                <h2>Contact page {{ $company->name }}</h2>
+                <p>{{ $company->description }}</p>
             </div>
         </div>
     </div>

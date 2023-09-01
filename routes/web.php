@@ -20,5 +20,6 @@ Route::domain(env('APP_URL'))->group(function(){
         Route::get('contact', 'contact')->name('contact_page');
         Route::get('/catalog' ,'catalog')->name('catalog_page');
         Route::get('/portfoli' ,'portfolio')->name('portfolio_page');
+        Route::get('/projects', 'projects');
     });
 });
