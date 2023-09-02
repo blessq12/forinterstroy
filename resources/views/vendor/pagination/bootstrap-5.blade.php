@@ -29,13 +29,13 @@
         <div class="d-none flex-sm-fill d-sm-flex align-items-sm-center justify-content-sm-between">
             <div>
                 <p class="small text-muted">
-                    @lang('pagination.showing')
+                    {{__('Showing')}}
                     <span class="fw-semibold">{{ $paginator->firstItem() }}</span>
-                    @lang('pagination.to')
+                    {{__('to')}}
                     <span class="fw-semibold">{{ $paginator->lastItem() }}</span>
-                    @lang('pagination.of')
+                    {{__('of')}}
                     <span class="fw-semibold">{{ $paginator->total() }}</span>
-                    @lang('pagination.results')
+                    {{__('results')}}
                 </p>
             </div>
 
