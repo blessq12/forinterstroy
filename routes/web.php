@@ -22,8 +22,15 @@ Route::domain(env('APP_URL'))->group(function(){
         Route::get('/', 'index')->name('index_page');
         Route::get('contact', 'contact')->name('contact_page');
         Route::get('/catalog' ,'catalog')->name('catalog_page');
+        Route::get('/single' ,'singleProject')->name('single_project_page');
+        Route::get('/slug_cat', 'slugCategories')->name('slug_category_page');
+        Route::get('/single_slug', 'singleSlug')->name('single_slug_page');
         Route::get('/portfoli' ,'portfolio')->name('portfolio_page');
+        
+        // fetch data from old DB
         Route::get('/projects', 'projects');
+        Route::get('/slugs', 'slugs');
+
     });
 });
 
