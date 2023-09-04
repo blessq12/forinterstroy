@@ -11,10 +11,11 @@
     <div class="login d-flex align-items-center justify-content-center" style="width: 100%;min-height:100vh">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-lg-5">
                     <form class="bg-dark rounded text-white p-3" method="post">
                         @csrf
                         <h4>Авторизация</h4>
+                        
                         @if ($register)
                             <p class="text-success mb-0">
                                 Пользователь успешно создан, теперь вы можете авторизоваться в системе.
@@ -22,6 +23,11 @@
                         @else
                             <p class="text-light mb-0">
                                 Авторизуйтесь, чтобы продолжить
+                            </p>
+                        @endif
+                        @if ($loginFails)
+                            <p class="text-danger m-0">
+                                Пользователь не найден или неверный пароль
                             </p>
                         @endif
                         @if ($errors)

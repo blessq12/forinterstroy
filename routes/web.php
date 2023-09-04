@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,17 +37,20 @@ Route::domain('crm.' .env('APP_URL'))->group(function(){
             Route::get('/{category}/all', 'projectCategory');
             Route::get('/slugs', 'slugs');
             Route::get('/{category}/all', 'slugs');
+            // logout route
+            Route::get('/user/logout', [LoginController::class, 'logoutUser'])->name('crm_logout');
         });
     });
     
     // login&register Methods
-    Route::controller(LoginController::class)->group(function(){
-        Route::prefix('user')->group(function(){
-            Route::get('login', 'login')->name('crm_login');
-            Route::post('login', 'loginUser');
-            Route::get('register', 'register')->name('crm_register');
-            Route::post('register', 'registerUser');
-            Route::get('logout', 'logoutUser')->name('crm_logout');
+    Route::middleware('guest')->group(function(){
+        Route::controller(LoginController::class)->group(function(){
+            Route::prefix('user')->group(function(){
+                Route::get('login', 'login')->name('crm_login');
+                Route::post('login', 'loginUser');
+                Route::get('register', 'register')->name('crm_register');
+                Route::post('register', 'registerUser');
+            });
         });
-    });    
+    });
 });

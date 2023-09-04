@@ -10,7 +10,7 @@
                         <li>{{ $project->name }}</li>
                     @endforeach
                 </ul>
-                {{ $projects->onEachSide(3)->links() }}
+                {{ $projects->appends($_GET)->links() }}
             </div>
         </div>
     </div>

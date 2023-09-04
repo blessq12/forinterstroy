@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
@@ -17,13 +18,16 @@ class LoginController extends Controller
 
         // after register state
         $register = false;
-
+        $loginFails = false;
         if ($request->register && $request->register == 'success'){
             $register = true;
         }
-
+        if ($request->login_errors){
+            $loginFails = true;
+        }
         return view('login.login',[
-            'register' => $register
+            'register' => $register,
+            'loginFails' => $loginFails
         ]);
     }
     public function loginUser(Request $request){
@@ -44,7 +48,7 @@ class LoginController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ])){
-            return redirect()->route('crm_login')->with(['user'=>'not-found']);
+            return redirect()->route('crm_login', [ 'login_errors' => true]);
         }
         
         return redirect()->route('dashboard');
@@ -76,9 +80,8 @@ class LoginController extends Controller
         return redirect()->route('crm_login',['register'=>'success']);
     }
     public function logoutUser(){
-        if (Auth::user()){
-            Auth::logout();
-            return redirect()->route('crm_login');
-        }
+        Session::flush();
+        Auth::logout();
+        return redirect()->route('crm_login');
     }
 }

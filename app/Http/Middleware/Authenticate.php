@@ -12,6 +12,8 @@ class Authenticate extends Middleware
      */
     protected function redirectTo(Request $request): ?string
     {
-        return $request->expectsJson() ? null : route('crm_login');
+        if (!auth()->user()){
+            return $request->expectsJson() ? null : route('crm_login');
+        }
     }
 }
