@@ -31,13 +31,14 @@ Route::domain('crm.' .env('APP_URL'))->group(function(){
     // crm Routes
     Route::middleware('auth')->group(function(){
         Route::controller(AdminController::class)->group(function(){
-            Route::get('/', 'dashboard');
+            Route::get('/', 'dashboard')->name('dashboard');
             Route::get('/projects', 'projects');
             Route::get('/{category}/all', 'projectCategory');
             Route::get('/slugs', 'slugs');
             Route::get('/{category}/all', 'slugs');
         });
     });
+    
     // login&register Methods
     Route::controller(LoginController::class)->group(function(){
         Route::prefix('user')->group(function(){
@@ -45,6 +46,7 @@ Route::domain('crm.' .env('APP_URL'))->group(function(){
             Route::post('login', 'loginUser');
             Route::get('register', 'register')->name('crm_register');
             Route::post('register', 'registerUser');
+            Route::get('logout', 'logoutUser')->name('crm_logout');
         });
     });    
 });
