@@ -21,15 +21,22 @@ Route::domain(env('APP_URL'))->group(function(){
     Route::controller(MainController::class)->group(function(){
         Route::get('/', 'index')->name('index_page');
         Route::get('contact', 'contact')->name('contact_page');
+        // Projects
         Route::get('/catalog' ,'catalog')->name('catalog_page');
         Route::get('/single' ,'singleProject')->name('single_project_page');
+        // Slugs
         Route::get('/slug_cat', 'slugCategories')->name('slug_category_page');
         Route::get('/single_slug', 'singleSlug')->name('single_slug_page');
+        // Articles
+        Route::get('/blog', 'blogCategories')->name('blogCategoriesPage');
+        Route::get('/blog-single', 'singlerAticle')->name('singleArticlePage');
+        // Portfolio
         Route::get('/portfoli' ,'portfolio')->name('portfolio_page');
         
         // fetch data from old DB
         Route::get('/projects', 'projects');
         Route::get('/slugs', 'slugs');
+        Route::get('/articles', 'articles');
 
     });
 });

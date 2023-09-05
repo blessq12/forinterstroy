@@ -21,6 +21,7 @@
                         <a href="{{ route('catalog_page') }}" class="text-white m-0">Проекты</a>
                         <a href="{{ route('slug_category_page') }}" class="text-white m-0">Услуги</a>
                         <a href="{{ route('portfolio_page') }}" class="text-white m-0">Портфолио</a>
+                        <a href="{{ route('blogCategoriesPage') }}" class="text-white m-0">Статьи</a>
                         <a href="{{ route('contact_page') }}" class="text-white m-0">Контакты</a>
                     </li>
                 </ul>

@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
             CompanySeeder::class,
             CategorySeeder::class,
             ProjectSeeder::class,
-            SlugCategorySeeder::class
+            SlugCategorySeeder::class,
+            ArticleCategorySeeder::class
         ]);
     }
 }

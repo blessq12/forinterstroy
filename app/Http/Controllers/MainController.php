@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+use App\Models\ArticleCategory;
 use App\Models\Category;
 use App\Models\Company;
 use App\Models\Project;
@@ -118,6 +120,28 @@ class MainController extends Controller
         ]);
     }
     // End Slugs
+
+    // Articles
+    public function blogCategories(){
+        return view('blog-categories',[
+            'company' => Company::first(),
+            'articleCategories' => ArticleCategory::all(),
+            'articles' => Article::all()
+        ]);
+    }
+    public function singlerAticle(Request $request){
+
+        if (!$request->id) return abort(404);
+        $article = Article::findOrFail($request->id);
+        if (!$article) return abort(404);
+        return view('single-article',[
+            'company' => Company::first(),
+            'article' => $article,
+            'category' => $article->articleCategory
+        ]);
+    }
+    // End Articles
+
     // fetch data from old DB
     public function projects(){
         $content = file_get_contents('https://forinterstroy.ru/projects');
@@ -205,6 +229,28 @@ class MainController extends Controller
 
             if ($slug->save()){
                 echo $slug->name . 'Saved success';
+            }
+        }
+    }
+    public function articles(){
+        $content = file_get_contents("https://forinterstroy.ru/articles");
+        $content = json_decode($content);
+
+        foreach ($content as $key => $value){
+            $item = json_decode($value);
+            $item = $item->$key;
+            
+            $article = new Article();
+            
+            $article->article_category_id = 1;
+            $article->name = $item->name;
+            $article->description = $item->seo_description;
+            $article->content = $item->excerpt;
+            $article->thumb = $item->image;
+            $article->image = $item->image_inner;
+
+            if ($article->save()){
+                echo 'Article name:' .$article->name .'. Saved successfull. <br>';
             }
         }
     }
