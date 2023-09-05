@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             ProjectSeeder::class,
             SlugCategorySeeder::class,
-            ArticleCategorySeeder::class
+            ArticleCategorySeeder::class,
+            PageSeeder::class
         ]);
     }
 }

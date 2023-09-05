@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\ArticleCategory;
 use App\Models\Category;
-use App\Models\Company;
+use App\Models\Page;
 use App\Models\Project;
 use App\Models\Slug;
 use App\Models\SlugCategory;
@@ -15,26 +15,22 @@ use Illuminate\Support\Facades\App;
 class MainController extends Controller
 {
     public function index(Request $request){
-        return view('index',[
-            'company' => Company::all()->first()
-        ]);
+        
+        return view('index',[]);
+
     }
     public function contact(Request $request){
-        return view('contact',[
-            'company' => Company::all()->first()
-        ]);
+        return view('contact',[]);
     }
     // Projects
     public function catalog(Request $request){
-        
         // check query param and call category action if isset
         if ($request->category){
             return $this->callAction('category',$request->query());
-        }
-        
+        }        
         return view('catalog',[
-            'company' => Company::all()->first(),
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'page' => Page::where('uri', $request->getRequestUri())->first()
         ]);
     }
     public function category($query){
@@ -49,10 +45,14 @@ class MainController extends Controller
 
         $projects = Project::where('category_id',$category->id)->paginate(10);
         
+        $page = new Page();
+        $page->title = $category->name;
+        $page->description = $category->description;
+
         return view('single-category',[
-            'company' => Company::all()->first(),
             'category' => $category,
             'projects' => $projects,
+            'page' => $page
         ]);
     }
     public function singleProject(Request $request){
@@ -67,7 +67,6 @@ class MainController extends Controller
         }
 
         return view('single-project', [
-            'company' => Company::all()->first(),
             'project' => $project,
             'category' => $project->category
         ]);
@@ -80,7 +79,6 @@ class MainController extends Controller
         }
 
         return view('slug-categories',[
-            'company' => Company::all()->first(),
             'slugCategories' => SlugCategory::all()
         ]);
     }
@@ -98,7 +96,6 @@ class MainController extends Controller
         $slugs = Slug::where('slug_category_id', $category->id)->paginate(10);
 
         return view('single-slug-category',[
-            'company' => Company::all()->first(),
             'category' => $category,
             'slugs' => $slugs
         ]);
@@ -114,7 +111,6 @@ class MainController extends Controller
             return abort(404);
         }
         return view('single-slug', [
-            'company' => Company::all()->first(),
             'slug' => $slug,
             'category' => $slug->slugCategory
         ]);
@@ -124,7 +120,6 @@ class MainController extends Controller
     // Articles
     public function blogCategories(){
         return view('blog-categories',[
-            'company' => Company::first(),
             'articleCategories' => ArticleCategory::all(),
             'articles' => Article::all()
         ]);
@@ -135,12 +130,19 @@ class MainController extends Controller
         $article = Article::findOrFail($request->id);
         if (!$article) return abort(404);
         return view('single-article',[
-            'company' => Company::first(),
             'article' => $article,
             'category' => $article->articleCategory
         ]);
     }
     // End Articles
+
+    // Portfolio
+
+    public function portfolio(){
+        return view('portfolio');
+    }
+
+    // END Portfolio
 
     // fetch data from old DB
     public function projects(){

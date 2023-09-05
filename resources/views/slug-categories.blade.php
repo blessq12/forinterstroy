@@ -1,5 +1,6 @@
 @extends('components.layout')
 @section('content')
+    <x-comp.banner></x-comp.banner>
     <div class="container py-5">
         <div class="row">
             <div class="col">

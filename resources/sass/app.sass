@@ -1,0 +1,122 @@
+@import 'variables'
+@import 'mixins'
+@import 'bootstrap/scss/bootstrap'
+
+// topbar section
+.topbar
+    background: $topbar-background
+    min-height: 40px
+    color: #fff
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+
+nav
+    padding: $navbar-padding
+    background: $navbar-background
+    color: $color-white
+    position: sticky
+    top: 0
+    z-index: 10
+    height: 70px
+
+.page-banner
+    position: relative
+    background: url('http://via.placeholder.com/1920x1080')
+    background-position: center !important
+    background-size: cover !important
+    background-repeat: no-repeat !important
+    z-index: 1
+    & .overlay
+       position: absolute
+       width: 100%
+       height: 100%
+       background: $overlay
+       z-index: 2
+    & .banner
+        padding: 40px 0
+        position: relative
+        z-index: 3
+        & h2
+            font-weight: 600
+            font-size: 32px
+        & p
+            font-size: 12px
+        & ul
+            @include list-reset
+            display: flex
+            align-items: center
+            & li
+                &::after
+                    content: '/'
+                    color: $gray-200
+                    padding: 0 3px 
+                & a
+                    color: $gray-200
+                    text-decoration: none
+
+.category-item
+    min-height: 80px
+    margin-bottom: 24px
+    border: 1px solid #dedede
+    overflow: hidden
+    border-radius: $default-radius
+    & .image
+        height: 120px
+        width: 100%
+        background-position: center !important
+        background-repeat: no-repeat !important
+        background-size: cover !important
+    & .content
+        padding: 12px 6px
+        & h5
+            font-size: 14px
+            font-weight: $font-weight-medium
+            margin-bottom: 0
+        & p
+            font-size: 12px
+            font-weight: light
+            margin-bottom: 0
+    & .footer
+        background: $primary-color
+        height: 30px
+        padding: 0
+        display: flex
+        align-items: center
+        justify-content: center
+        & a
+           color: #fff
+           text-decoration: none
+           text-transform: uppercase
+           height: 100%
+           padding: 0 6px
+           display: flex
+           align-items: center
+           font-size: 8px
+           font-weight: bold
+           &::after
+            content: '→'
+            padding-left: 5px
+            display: flex
+            align-items: center
+.empty-set
+    width: 100%
+    max-width: 250px
+    text-align: center
+    & img
+        width: 100%
+    & h3
+        font-weight: $font-weight-light
+        
+footer
+footer .footer-wrapper
+    background: $primary-color
+    padding: 45px 0
+    color: $color-white
+
+footer .copyright
+    background: $bg-dark
+    padding: $vertical-padding
+    color: $color-white
+

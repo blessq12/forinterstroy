@@ -1,22 +1,27 @@
 @extends('components.layout')
 @section('content')
+    <x-comp.banner :page="$page"></x-comp.banner>
     <div class="container py-5">
         <div class="row">
+            @if ($projects->total() > 0)
+                <div class="col-12 col-md-8 col-lg-8">
+                    <div class="row">
+                        @foreach ($projects as $project)
+                            <div class="col-6 col-md-4">
+                                {{ $project->name }}
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            @else
+                <x-comp.empty-set></x-comp.empty-set>
+            @endif
+            <div class="col-12 col-md-4 col-lg-4">
+                <p class="text-success">
+                    sidebar will be here
+                </p>
+            </div>
             <div class="col">
-                <h2>{{ $category->name }}</h2>
-                <p class="mb-0">{{ $category->description }}</p>
-                <ul class="list-unstyled ">
-                    @foreach ($projects as $project)
-                        <li>
-                            <h4>{{ $project->name }}</h4>
-                            <ul class="list-unstyled d-flex align-items-center py-3">
-                                <li class="px-1">Площадь: {{ $project->area }}</li>
-                                <li class="px-1">Этажей: {{ $project->floors }}</li>
-                            </ul>
-                            <a href="{{ route('single_project_page', ['id' => $project->id ]) }}" class="btn btn-primary"> перейти</a>
-                        </li>
-                    @endforeach
-                </ul>
                 {{ $projects->appends($_GET)->links() }}
             </div>
         </div>

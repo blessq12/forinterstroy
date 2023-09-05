@@ -12,4 +12,7 @@ class ArticleCategory extends Model
     public function articles(){
         return $this->hasMany(Article::class);
     }
+    public function countArticle(){
+        return $this->hasMany(Article::class)->count();
+    }
 }
