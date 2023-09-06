@@ -1,18 +1,41 @@
 @extends('components.layout')
 @section('content')
-    <x-comp.banner></x-comp.banner>
+    <x-comp.banner :page="$page"></x-comp.banner>
     <div class="container py-5">
         <div class="row">
-            <div class="col">
-                <div class="d-flex align-items-center fw-bold py-3">
-                    <a href="{{ route('index_page') }}" class="px-1 text-info">Главная</a> / 
-                    <a href="{{ route('catalog_page', ['category' => $category->uri]) }}" class="px-1 text-info">{{ $category->name }}</a> / 
-                    <span class="px-1 text-info">{{ $project->name }}</span>
+            <div class="col-12 col-md-8 col-lg-8">
+                <div class="project-slider">
+                    <div class="slider-item">
+                        <img src="http://via.placeholder.com/1920x1080" alt="{{ $project->name }}">
+                    </div>
                 </div>
-                <p class="m-0 fw-light">From Category: {{ $category->name }}</p>
-                <h2 class="fw-semibold">Project Name: {{ $project->name }}</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit consequuntur adipisci repellendus incidunt a, asperiores aut blanditiis qui sequi repellat, doloremque quisquam nostrum id possimus, aspernatur reprehenderit culpa. Modi, rerum!</p>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="project-details">
+                            <div class="description">
+                                <h6>Описание</h6>
+                                <p>
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem fugit adipisci deleniti iste? Nam mollitia tempora nisi exercitationem accusantium magni cumque, delectus necessitatibus tempore tenetur, enim sit atque veritatis. Placeat?
+                                </p>
+                            </div>
+                            <div class="project-data">
+                                <h6>Данные проекта</h6>
+                                <ul>
+                                    <li>data1 : value1</li>
+                                    <li>data2 : value2</li>
+                                    <li>data3 : value3</li>
+                                    <li>data4 : value4</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <x-comp.cta :company="$company"></x-comp.cta>
+                    </div>
+                </div>
+                
             </div>
+            <div class="col-12 col-md-4 col-lg-4"></div>
         </div>
     </div>
 @endsection

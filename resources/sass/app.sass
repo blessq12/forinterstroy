@@ -1,6 +1,8 @@
 @import 'variables'
 @import 'mixins'
 @import 'bootstrap/scss/bootstrap'
+@import 'single-project'
+@import 'cta'
 
 // topbar section
 .topbar
@@ -57,49 +59,49 @@ nav
                     text-decoration: none
 
 .category-item
-    min-height: 80px
-    margin-bottom: 24px
-    border: 1px solid #dedede
+    display: block
     overflow: hidden
-    border-radius: $default-radius
-    & .image
-        height: 120px
+    margin-bottom: 24px
+    border: $cart-border
+    & .header
         width: 100%
-        background-position: center !important
-        background-repeat: no-repeat !important
+        height: 250px
         background-size: cover !important
+        background-repeat: no-repeat !important
+        background-position: center !important
     & .content
-        padding: 12px 6px
-        & h5
-            font-size: 14px
-            font-weight: $font-weight-medium
-            margin-bottom: 0
-        & p
-            font-size: 12px
-            font-weight: light
-            margin-bottom: 0
+        padding: 20px 15px
+        & h6
+            font-size: 18px
+            font-weight: $font-weight-semibold
+        & ul
+            @include list-reset
+            display: flex
+            & li
+                display: block
+                & span
+                & p
     & .footer
-        background: $primary-color
-        height: 30px
-        padding: 0
+        border-top: $cart-border
+        height: 50px
         display: flex
         align-items: center
-        justify-content: center
+        justify-content: end
         & a
-           color: #fff
-           text-decoration: none
-           text-transform: uppercase
-           height: 100%
-           padding: 0 6px
-           display: flex
-           align-items: center
-           font-size: 8px
-           font-weight: bold
-           &::after
-            content: '→'
-            padding-left: 5px
+            padding: 0 15px
+            background: $primary-color
             display: flex
             align-items: center
+            height: 100%
+            color: $white
+            text-decoration: none
+            font-weight: $font-weight-normal
+            &::after
+                content: '→'
+                padding-left: 5px
+                display: flex
+                align-items: center
+// empty set
 .empty-set
     width: 100%
     max-width: 250px
@@ -108,7 +110,47 @@ nav
         width: 100%
     & h3
         font-weight: $font-weight-light
-        
+// end empty set
+
+// project item
+.project-item
+    display: block
+    overflow: hidden
+    margin-bottom: 24px
+    border: $cart-border
+    & .header
+        width: 100%
+        height: 250px
+        background-size: cover !important
+        background-repeat: no-repeat !important
+        background-position: center !important
+    & .content
+        padding: 20px 15px
+        & h6
+            font-size: 16px
+            font-weight: $font-weight-normal
+    & .footer
+        border-top: $cart-border
+        height: 50px
+        display: flex
+        align-items: center
+        justify-content: end
+        & a
+            padding: 0 15px
+            background: $primary-color
+            display: flex
+            align-items: center
+            height: 100%
+            color: $white
+            text-decoration: none
+            font-weight: $font-weight-normal
+            &::after
+                content: '→'
+                padding-left: 5px
+                display: flex
+                align-items: center
+// end project item
+
 footer
 footer .footer-wrapper
     background: $primary-color

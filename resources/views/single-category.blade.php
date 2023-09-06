@@ -7,10 +7,21 @@
                 <div class="col-12 col-md-8 col-lg-8">
                     <div class="row">
                         @foreach ($projects as $project)
-                            <div class="col-6 col-md-4">
-                                {{ $project->name }}
+                            <div class="col-12 col-md-6">
+                                <div class="project-item">
+                                    <div class="header" style="background: url('http://via.placeholder.com/512x512')"></div>
+                                    <div class="content">
+                                        <h6>{{ $project->name }}</h6>
+                                    </div>
+                                    <div class="footer">
+                                        <a href="{{ route('single_project_page',['id'=>$project->id]) }}">Подробнее</a>
+                                    </div>
+                                </div>
                             </div>
                         @endforeach
+                        <div class="col">
+                            {{ $projects->appends($_GET)->links() }}
+                        </div>
                     </div>
                 </div>
             @else
@@ -21,9 +32,7 @@
                     sidebar will be here
                 </p>
             </div>
-            <div class="col">
-                {{ $projects->appends($_GET)->links() }}
-            </div>
+            
         </div>
     </div>
 @endsection

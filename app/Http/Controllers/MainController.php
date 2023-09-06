@@ -66,9 +66,14 @@ class MainController extends Controller
             return abort(404);
         }
 
+        $page = new Page();
+        $page->title = $project->name;
+        $page->description = 'Подробная информация по ' .$project->name .' на одной странице. Если у вас возникли вопросы - позвоните нам.';
+
         return view('single-project', [
             'project' => $project,
-            'category' => $project->category
+            'category' => $project->category,
+            'page' => $page
         ]);
     }
     // End Projects
