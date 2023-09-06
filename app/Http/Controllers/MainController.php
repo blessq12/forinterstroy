@@ -20,7 +20,9 @@ class MainController extends Controller
 
     }
     public function contact(Request $request){
-        return view('contact',[]);
+        return view('contact',[
+            'page' => Page::where('uri', $request->getRequestUri())->first() 
+        ]);
     }
     // Projects
     public function catalog(Request $request){
@@ -135,11 +137,19 @@ class MainController extends Controller
     public function singlerAticle(Request $request){
 
         if (!$request->id) return abort(404);
+
         $article = Article::findOrFail($request->id);
+
         if (!$article) return abort(404);
+
+        $page = new Page();
+        $page->title = $article->name;
+        $page->description = $article->description;
+
         return view('single-article',[
             'article' => $article,
-            'category' => $article->articleCategory
+            'category' => $article->articleCategory,
+            'page' => $page
         ]);
     }
     // End Articles

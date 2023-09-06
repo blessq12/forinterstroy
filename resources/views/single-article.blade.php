@@ -1,18 +1,27 @@
 @extends('components.layout')
 
 @section('content')
-<x-comp.banner></x-comp.banner>
+<x-comp.banner :page="$page"></x-comp.banner>
 <div class="container py-5">
     <div class="row">
-        <div class="col">
-            <div class="d-flex align-items-center fw-bold py-3">
-                <a href="{{ route('index_page') }}" class="px-1 text-info">Главная</a> / 
-                <a href="{{ route('blogCategoriesPage', ['category' => $category->uri]) }}" class="px-1 text-info">{{ $category->name }}</a> / 
-                <span class="px-1 text-info">{{ $article->name }}</span>
+        <div class="col-12 col-md-12 col-lg-8 pb-4">
+            <div class="article-image">
+                <img src="{{ $article->image }}" alt="">
             </div>
-            <p class="m-0 fw-light">From Category: {{ $category->name }}</p>
-            <h2 class="fw-semibold">Project Name: {{ $article->name }}</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit consequuntur adipisci repellendus incidunt a, asperiores aut blanditiis qui sequi repellat, doloremque quisquam nostrum id possimus, aspernatur reprehenderit culpa. Modi, rerum!</p>
+            <div class="article">
+                
+                <div class="title">
+                    <h5>{{ $article->name }}</h5>
+                    <hr>
+                </div>
+                <div class="content">
+                    {!! $article->content !!}
+                </div>
+            </div>
+            <x-comp.cta :company="$company"></x-comp.cta>
+        </div>
+        <div class="col-12 col-md-12 col-lg-4">
+            <x-comp.article-sidebar></x-comp.article-sidebar>
         </div>
     </div>
 </div>

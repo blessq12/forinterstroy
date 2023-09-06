@@ -1,0 +1,30 @@
+.article-image
+    width: 100%
+    overflow: hidden
+    & img
+        width: 100%
+.article
+    & .title
+        padding: 24px 0 0 0
+        & hr
+            border-top: 2px solid $primary-color
+            opacity: 1
+            width: 50%
+            margin: 0
+            margin-top: 12px
+        & h5
+            margin-bottom: 0
+    & .content
+        padding: 24px 0
+        & p
+            font-size: 12px
+        & ul
+            @include list-reset
+            font-size: 12px
+            & li
+                display: flex
+                &::before
+                    content: '•'
+                    font-size: 18px
+                    color: $primary-color
+                    padding-right: 12px
