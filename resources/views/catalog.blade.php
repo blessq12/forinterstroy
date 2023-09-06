@@ -6,7 +6,7 @@
             @foreach ($categories as $category)
                 <div class="col-12 col-md-4">
                     <div class="category-item">
-                        <div class="header" style="background: url('http://via.placeholder.com/512x512')"></div>
+                        <div class="header" style="background: url('{{ $category->image }}')"></div>
                         <div class="content">
                             <h6>{{ $category->name }}</h6>
                             <ul>

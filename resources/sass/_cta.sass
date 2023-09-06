@@ -1,19 +1,28 @@
 .call-to-action
-    background: $primary-color
+    border: $cart-border
     min-height: 150px
     width: 100%
-    padding: 24px
+    padding: 12px
     display: flex
     align-items: center
     & .logo
-        max-width: 150px
+        max-width: 100px
+        margin-right: 12px
         & img
             width: 100%
     & .content
         & h5
-            margin-bottom: 0
+            margin-bottom: 6px
         & p
             font-size: 12px
+            margin-bottom: 6px
+        
+        & span.phone
+            font-size: 12px
+            margin-bottom: 6px
+            & a
+                text-decoration: none
+                color: $primary-color
         & ul
             @include list-reset
             display: flex

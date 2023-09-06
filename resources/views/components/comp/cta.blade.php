@@ -3,8 +3,14 @@
         <img src="http://via.placeholder.com/512x512" alt="">
     </div>
     <div class="content">
-        <h5>Header</h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam labore voluptatibus adipisci repellendus blanditiis soluta nam autem sed assumenda incidunt distinctio dolor sapiente doloribus perferendis fugit molestiae, hic, cupiditate amet.</p>
+        <h5>{{ $company->name }}</h5>
+        <p>
+            {{ $company->description }}
+        </p>
+        <span class="phone">
+            Телефон:
+            <a href="tel:{{ $company->phone }}">{{ $company->phone }}</a>
+        </span>
         <ul>
             <li>item 1</li>
             <li>item 2</li>

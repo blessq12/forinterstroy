@@ -9,7 +9,7 @@
                         @foreach ($projects as $project)
                             <div class="col-12 col-md-6">
                                 <div class="project-item">
-                                    <div class="header" style="background: url('http://via.placeholder.com/512x512')"></div>
+                                    <div class="header" style="background: url('{{ $project->image_thumb_1 }}')"></div>
                                     <div class="content">
                                         <h6>{{ $project->name }}</h6>
                                     </div>

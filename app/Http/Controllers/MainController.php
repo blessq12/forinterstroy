@@ -84,7 +84,8 @@ class MainController extends Controller
         }
 
         return view('slug-categories',[
-            'slugCategories' => SlugCategory::all()
+            'slugCategories' => SlugCategory::all(),
+            'page' => Page::where('uri', $request->getRequestUri())->first()
         ]);
     }
     public function singleSlugCategory($category){
@@ -143,8 +144,11 @@ class MainController extends Controller
 
     // Portfolio
 
-    public function portfolio(){
-        return view('portfolio');
+    public function portfolio(Request $request){
+
+        return view('portfolio',[
+            'page' => Page::where('uri', $request->getRequestUri())->first()
+        ]);
     }
 
     // END Portfolio

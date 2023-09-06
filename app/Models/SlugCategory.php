@@ -12,4 +12,7 @@ class SlugCategory extends Model
     public function slugs(){
         return $this->hasMany(Slug::class);
     }
+    public function slugCount(){
+        return $this->hasMany(Slug::class)->count();
+    }
 }

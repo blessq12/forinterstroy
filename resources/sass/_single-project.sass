@@ -5,6 +5,12 @@
             width: 100%
 
 .project-details
+    & hr
+        margin: 0
+        margin-bottom: 12px
+        width: 50%
+        border-top: 2px solid $primary-color
+        opacity: 1
     & h1
         font-weight: $font-weight-semibold
     & .description
@@ -19,3 +25,24 @@
         & h6
             font-size: 18px
             font-weight: $font-weight-semibold
+        & ul
+            @include list-reset
+
+.layout
+    padding: 0 0 24px 0
+    & h6
+        font-size: 18px
+        font-weight: $font-weight-semibold
+    & .accordion
+        & .accordion-item
+            border-radius: 0
+            & .accordion-button
+                &:not(.collapsed)
+                    background: $primary-color
+                    color: #fff
+                    border-radius: 0
+            & .accordion-body
+                & img
+                    width: 100%
+
+                    
