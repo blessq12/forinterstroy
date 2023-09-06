@@ -124,10 +124,12 @@ class MainController extends Controller
     // End Slugs
 
     // Articles
-    public function blogCategories(){
+    public function blogCategories(Request $request){
+
         return view('blog-categories',[
             'articleCategories' => ArticleCategory::all(),
-            'articles' => Article::all()
+            'articles' => Article::all(),
+            'page' => Page::where('uri', $request->getRequestUri())->first()
         ]);
     }
     public function singlerAticle(Request $request){
