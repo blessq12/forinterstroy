@@ -4,7 +4,7 @@
     <div class="container py-5">
         <div class="row">
             @foreach ($categories as $category)
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-6 col-lg-4">
                     <div class="category-item">
                         <div class="header" style="background: url('{{ $category->image }}')"></div>
                         <div class="content">

@@ -52,6 +52,7 @@ class MainController extends Controller
         $page->description = $category->description;
 
         return view('single-category',[
+            'categories' => Category::all(),
             'category' => $category,
             'projects' => $projects,
             'page' => $page
@@ -74,6 +75,7 @@ class MainController extends Controller
 
         return view('single-project', [
             'project' => $project,
+            'categories' => Category::all(),
             'category' => $project->category,
             'page' => $page
         ]);

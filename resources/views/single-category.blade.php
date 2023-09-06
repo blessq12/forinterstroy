@@ -28,9 +28,7 @@
                 <x-comp.empty-set></x-comp.empty-set>
             @endif
             <div class="col-12 col-md-4 col-lg-4">
-                <p class="text-success">
-                    sidebar will be here
-                </p>
+                <x-comp.project-sidebar :categories="$categories" :company="$company"></x-comp.project-sidebar>
             </div>
             
         </div>

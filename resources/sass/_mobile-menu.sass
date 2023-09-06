@@ -52,3 +52,46 @@
             max-width: 50px
             & img
                 width: 100%
+    & .nav
+        padding: 30px 0
+        & ul
+            @include list-reset
+            & li
+                border-bottom: $cart-border
+                & a
+                    display: flex
+                    align-items: center
+                    font-size: 18px
+                    font-weight: $font-weight-semibold
+                    text-decoration: none
+                    color: $primary-color
+                    width: 100%
+                    min-height: 45px
+                    &::before
+                        content: '>'
+                        padding-right: 12px
+
+    & .footer
+        padding: 24px 0
+        & ul
+            @include list-reset
+            display: flex
+            justify-content: start
+            & li
+                overflow: hidden
+                padding: 0 6px
+                &:first-child
+                    padding-left: 0
+                & a
+                    text-decoration: none
+                & .social-item
+                    border-radius: $default-radius
+                    overflow: hidden
+                    height: 40px
+                    width: 40px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    & i
+                        color: #fff
+                        font-size: 24px

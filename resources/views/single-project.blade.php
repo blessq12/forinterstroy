@@ -57,7 +57,9 @@
                 </div>
                 
             </div>
-            <div class="col-12 col-md-4 col-lg-4"></div>
+            <div class="col-12 col-md-4 col-lg-4">
+                <x-comp.project-sidebar :categories="$categories" :company="$company"></x-comp.project-sidebar>
+            </div>
         </div>
     </div>
 @endsection
