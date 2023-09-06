@@ -8,5 +8,47 @@
     z-index: 99
     transform: translateX(100%)
     transition: all ease-in-out .3s
+    & .phone-top
+        & a
+            color: $primary-color
+            text-decoration: none
+        & h4
+            margin-bottom: 0
     &.show
         transform: translateX(0)
+    & button.close-menu
+        border: 0
+        background: transparent
+        padding: 0
+        margin: 0
+        width: 30px
+        height: 30px
+        display: block
+        position: relative
+        & span:first-child
+            display: block
+            height: 2px
+            width: 100%
+            background: #000
+            transform: rotate(45deg)
+        & span:last-child
+            margin-top: -1px
+            display: block
+            height: 2px
+            width: 100%
+            background: #000
+            transform: rotate(-45deg)
+    & .header
+        & h4
+            font-weight: $font-weight-semibold
+            font-size: 22px
+            text-transform: uppercase
+            margin-bottom: 0
+        & span
+            font-weight: $font-weight-light
+            font-size: 12px
+        & .logo
+            max-height: 50px
+            max-width: 50px
+            & img
+                width: 100%
