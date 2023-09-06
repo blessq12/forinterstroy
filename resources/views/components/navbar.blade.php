@@ -5,8 +5,12 @@
             <div class="col-6">
                 {{ $company->name }}
             </div>
-            <div class="col-6 text-end">
-                ham
+            <div class="col-6 d-flex align-items-center justify-content-end">
+                <button class="burger-menu" onclick="document.querySelector('.mobile-menu').classList.add('show')">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
         {{-- tablet/desktop --}}

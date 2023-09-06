@@ -9,3 +9,4 @@
 </head>
 <body>
     <div id="app">
+    <x-comp.mobile-menu :company="$company"></x-comp.mobile-menu>

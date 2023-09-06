@@ -4,12 +4,36 @@
     </div>
     <div class="content">
        <ul class="list-unstyled">
-          <li>
-            <a href="javascript:void(null)">
+         <li>
+            <a href="{{ route('blogCategoriesPage') }}">
                 Без категории
                 <span>10</span>
             </a>
-        </li>
+         </li>
+         <li>
+            <a href="javascript:void(null)" class="text-muted">
+               Строительство
+               <span>0</span>
+            </a>
+         </li>
+         <li>
+            <a href="javascript:void(null)" class="text-muted">
+               Наружние работы
+               <span>0</span>
+            </a>
+         </li>
+         <li>
+            <a href="javascript:void(null)" class="text-muted">
+               Отделка
+               <span>0</span>
+            </a>
+         </li>
+         <li>
+            <a href="javascript:void(null)" class="text-muted">
+               Коммуникации
+               <span>0</span>
+            </a>
+         </li>
        </ul>
     </div>
  </div>
