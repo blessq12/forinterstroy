@@ -3,7 +3,7 @@
     <x-comp.banner :page="$page"></x-comp.banner>
     <div class="container py-5">
         <div class="row">
-            <div class="col-12 col-md-8 col-lg-8">
+            <div class="col-12 col-md-8 col-lg-8 pb-5">
                 <div class="project-slider">
                     <div class="slider-item">
                         <img src="{{ $project->image_full_1 }}" alt="{{ $project->name }}">
@@ -58,7 +58,12 @@
                 
             </div>
             <div class="col-12 col-md-4 col-lg-4">
-                <x-comp.project-sidebar :categories="$categories" :company="$company"></x-comp.project-sidebar>
+                <x-comp.project-sidebar 
+                    :categories="$categories" 
+                    :company="$company" 
+                    :project="$project" 
+                    :category="$category"
+                ></x-comp.project-sidebar>
             </div>
         </div>
     </div>

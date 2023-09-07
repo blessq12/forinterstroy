@@ -13,7 +13,9 @@ class ProjectSidebar extends Component
      */
     public function __construct(
         public $categories,
-        public $company
+        public $company,
+        public $project,
+        public $category
     )
     {
         //

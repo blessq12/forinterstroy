@@ -1,4 +1,4 @@
-<nav>
+<nav style="z-index: 12">
     <div class="container">
         {{-- mobile --}}
         <div class="row d-flex d-md-none d-lg-none">
