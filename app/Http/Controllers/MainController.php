@@ -107,9 +107,16 @@ class MainController extends Controller
         }
         $slugs = Slug::where('slug_category_id', $category->id)->paginate(10);
 
+        $page = new Page();
+        $page->title = $category->name;
+        $page->description = $category->description;
+
         return view('single-slug-category',[
+            'slugs' => SlugCategory::all(),
+            'categories' => SlugCategory::all(),
             'category' => $category,
-            'slugs' => $slugs
+            'slugs' => $slugs,
+            'page' => $page
         ]);
     }
     public function singleSlug(Request $request){
@@ -122,9 +129,14 @@ class MainController extends Controller
         if (!$slug){
             return abort(404);
         }
+        $page = new Page();
+        $page->title = $slug->name;
+        $page->description = "Подробная информация по услуге " . $slug->name . ' на одной странице. Если не нашли нужную услугу - позвоните нам.';
         return view('single-slug', [
             'slug' => $slug,
-            'category' => $slug->slugCategory
+            'category' => $slug->slugCategory,
+            'page' => $page,
+            'categories' => SlugCategory::all()
         ]);
     }
     // End Slugs

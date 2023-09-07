@@ -1,25 +1,35 @@
 @extends('components.layout')
 @section('content')
-    <x-comp.banner></x-comp.banner>
+    <x-comp.banner :page="$page"></x-comp.banner>
     <div class="container py-5">
-        <div class="row">
-            <div class="col">
-                <h2>Category Name: {{$category->name}}</h2>
-                <ul class="list-unstyled py-3">
+        <div class="row">    
+            <div class="col-12 col-md-12 col-lg-8">
+                <div class="row">
                     @if ($slugs->total() > 0)
                         @foreach ($slugs as $slug)
-                        <li>
-                            <h4>{{ $slug->name }}</h4>
-                            <a href="{{ route('single_slug_page',['id'=>$slug->id]) }}" class="btn btn-success">Enter</a>
-                        </li>
+                            <div class="col-12 col-md-6">
+                                <div class="slug-item">
+                                    <div class="header" style="background: url('{{ $slug->thumb }}')"></div>
+                                    <div class="content">
+                                        <h6>{{ $slug->name }}</h6>
+                                        <p>{{ mb_strimwidth($slug->content, 0, 100, '...') }}</p>
+                                    </div>
+                                    <div class="footer">
+                                        <a href="{{ route('single_slug_page', ['id' => $slug->id]) }}">Подробнее</a>
+                                    </div>
+                                </div>
+                        </div>
                         @endforeach
                     @else
-                        <p class="text-success">
-                            В данной категории нет ни одной услуги
-                        </p>
+                    <x-comp.empty-set></x-comp.empty-set>
                     @endif
-                </ul>
-                {{ $slugs->links() }}
+                    
+                </div>
+            </div>
+            <div class="col-12 col-md-12 col-lg-4">
+                <x-comp.slug-sidebar></x-comp.slug-sidebar>
+            </div>
+            {{ $slugs->links() }}
             </div>
         </div>
     </div>
