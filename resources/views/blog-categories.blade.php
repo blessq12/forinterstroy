@@ -6,20 +6,23 @@
         <div class="row">
             <div class="col-12 col-md-12 col-lg-8">
                 <div class="row">
-                    @foreach ($articles as $article)
-                        <div class="col-12 col-md-6">
-                            <div class="blog-single">
-                                <div class="header" style="background: url('{{ $article->image }}')"></div>
-                                <div class="content">
-                                    <h6>{{ $article->name }}</h6>
-                                    <p>{{  mb_strimwidth($article->description, 0, 100, '...') }}</p>
-                                </div>
-                                <div class="footer">
-                                    <a href="{{ route( 'singleArticlePage' , [ 'id' => $article->id ]) }}">Читать полностью</a>
+                    @if ($articles->total() > 0)
+                        @foreach ($articles as $article)
+                            <div class="col-12 col-md-6">
+                                <div class="blog-single">
+                                    <div class="header" style="background: url('{{ $article->image }}')"></div>
+                                    <div class="content">
+                                        <h6>{{ $article->name }}</h6>
+                                        <p>{{  mb_strimwidth($article->description, 0, 100, '...') }}</p>
+                                    </div>
+                                    <div class="footer">
+                                        <a href="{{ route( 'singleArticlePage' , [ 'id' => $article->id ]) }}">Читать полностью</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    @endif
+                    <x-comp.empty-set></x-comp.empty-set>
                 </div>
             </div>
             <div class="col-12 col-md-12 col-lg-4">

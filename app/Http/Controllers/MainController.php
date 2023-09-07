@@ -6,6 +6,7 @@ use App\Models\Article;
 use App\Models\ArticleCategory;
 use App\Models\Category;
 use App\Models\Page;
+use App\Models\PortfolioItem;
 use App\Models\Project;
 use App\Models\Slug;
 use App\Models\SlugCategory;
@@ -174,10 +175,28 @@ class MainController extends Controller
 
     // Portfolio
 
+    public function portfolio_setup(Request $request){
+        $imagesPath = '/images/portfolio/';        
+        $images = scandir(public_path() . $imagesPath);
+        $portfolioItem = [];
+        foreach ($images as $key => $image) {
+            if ($image !== '.' && $image !== '..' && $image !== '.DS_Store'){
+                $portfolioItem[] = ['image' => $imagesPath .$image];
+            }
+        }
+        foreach ($portfolioItem as $key => $value) {
+            $pItem = new PortfolioItem();
+            $pItem->image = $value['image'];
+            if ($pItem->save()){
+                echo 'item saved';
+            }
+        }
+    }
     public function portfolio(Request $request){
 
         return view('portfolio',[
-            'page' => Page::where('uri', $request->getRequestUri())->first()
+            'page' => Page::where('uri', $request->getRequestUri())->first(),
+            'items' => PortfolioItem::all()
         ]);
     }
 
