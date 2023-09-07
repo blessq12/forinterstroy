@@ -110,6 +110,7 @@ class MainController extends Controller
         $page = new Page();
         $page->title = $category->name;
         $page->description = $category->description;
+        $page->type = 'slug-category';
 
         return view('single-slug-category',[
             'slugs' => SlugCategory::all(),
@@ -132,6 +133,7 @@ class MainController extends Controller
         $page = new Page();
         $page->title = $slug->name;
         $page->description = "Подробная информация по услуге " . $slug->name . ' на одной странице. Если не нашли нужную услугу - позвоните нам.';
+        $page->type = 'slug';
         return view('single-slug', [
             'slug' => $slug,
             'category' => $slug->slugCategory,
@@ -262,7 +264,9 @@ class MainController extends Controller
                 break;
             }
             $slug->name = $item->name;
-            $slug->content = $item->description;
+
+            $slug->description = $item->description;
+            $slug->content = $item->page_text;
             $slug->thumb = $item->image;
             $slug->image = $item->image_full;
 

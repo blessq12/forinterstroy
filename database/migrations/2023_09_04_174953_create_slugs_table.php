@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(SlugCategory::class);
             $table->string('name');
+            $table->text('description');
             $table->text('content');
             $table->string('thumb');
             $table->string('image');

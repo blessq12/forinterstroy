@@ -14,7 +14,8 @@ class SlugSidebar extends Component
     public function __construct(
         public $categories = null,
         public $company = null,
-        public $slug = null
+        public $slug = null,
+        public $page = null
     )
     {
         //

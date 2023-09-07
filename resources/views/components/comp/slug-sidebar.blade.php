@@ -5,8 +5,20 @@
     <div class="content">
         <ul>
             @foreach($categories as $category)
-                <li>{{ $category->name }} - {{ $category->slugCount() }}</li>
+                <li>
+                    <a href="{{ route('slug_category_page', ['category' => $category->uri]) }}">
+                        {{ $category->name }}
+                        <span>
+                            {{ $category->slugCount() }}
+                        </span>
+                    </a>
+                </li>
             @endforeach
         </ul>
     </div>
 </div>
+<recall-form 
+    :project='@json($slug)' 
+    :page='@json($page)' 
+    :category='@json($category)'
+></recall-form>
