@@ -1,0 +1,55 @@
+.contact-wrap
+    border: $cart-border
+    margin-bottom: 24px
+    & .header
+        padding: 16px 24px
+        & h5
+            margin-bottom: 0
+    & .content
+        border-top: $cart-border
+        padding: 24px
+        & ul
+            @include list-reset
+            & li
+                padding: 12px 0
+                border-bottom: $cart-border
+                display: flex
+                justify-content: space-between
+                align-items: center
+                &:first-child
+                    padding-top: 0
+                &:last-child
+                    border-bottom: none
+                & span
+                    &:last-child
+                        font-weight: $font-weight-semibold
+        & ul.contact
+            @include list-reset
+            & li
+                display: flex
+                justify-content: start
+                align-items: center
+                & span
+                    height: 40px
+                    min-width: 40px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    border: $cart-border
+                    margin-right: 12px
+        & ul.social
+            display: flex
+            align-items: center
+            justify-content: start
+            & li
+                padding: 0
+                margin-right: 6px
+                & a
+                    padding: 6px 10px
+                    border: $cart-border
+                    text-decoration: none
+                    display: flex
+                    align-items: center
+                    & i
+                        font-size: 22px
+                        color: #fff

@@ -12,7 +12,7 @@
                                     <div class="header" style="background: url('{{ $slug->thumb }}')"></div>
                                     <div class="content">
                                         <h6>{{ $slug->name }}</h6>
-                                        <p>{{ mb_strimwidth($slug->description, 0, 100, '...') }}</p>
+                                        <p>{{ mb_strimwidth($slug->description, 0, 80, '...') }}</p>
                                     </div>
                                     <div class="footer">
                                         <a href="{{ route('single_slug_page', ['id' => $slug->id]) }}">Подробнее</a>

@@ -11,6 +11,10 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="slug-content">
+                            <div class="title">
+                                <h6>Описание</h6>
+                                <hr>
+                            </div>
                             {!! $slug->content !!}
                         </div>
                     </div>

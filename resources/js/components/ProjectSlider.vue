@@ -11,9 +11,7 @@ export default{
             { id: 3, imageUrl: this.project.image_thumb_3},
             { id: 4, imageUrl: this.project.image_thumb_4}
         )
-        console.log(this.project.image_full_1)
         this.imagePath = this.project.image_full_1.replace('1.jpg', '')
-        console.log(this.imagePath)
     },data:()=>({
         thumbnails:[],
         imagePath: null,

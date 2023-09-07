@@ -4,3 +4,25 @@
         width: 100%
 .slug-content
     padding: 24px 0
+    & .title
+        padding-bottom: 24px
+        & h6
+            font-size: 18px
+            font-weight: $font-weight-semibold
+        & hr
+            border-top: 2px solid $primary-color
+            width: 50%
+            opacity: 1
+            margin: 0
+    & ul
+        @include list-reset
+        & li
+            display: flex
+            &::before
+                content: "•"
+                font-size: 18px
+                color: $primary-color
+                padding-right: 12px
+    & img
+        width: 100%
+        height: auto
