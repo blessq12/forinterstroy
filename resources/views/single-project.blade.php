@@ -55,7 +55,6 @@
                         <x-comp.cta :company="$company"></x-comp.cta>
                     </div>
                 </div>
-                
             </div>
             <div class="col-12 col-md-4 col-lg-4">
                 <x-comp.project-sidebar 
@@ -63,6 +62,7 @@
                     :company="$company" 
                     :project="$project" 
                     :category="$category"
+                    :page="$page"
                 ></x-comp.project-sidebar>
             </div>
         </div>

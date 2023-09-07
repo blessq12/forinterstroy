@@ -12,10 +12,11 @@ class ProjectSidebar extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public $categories,
-        public $company,
-        public $project,
-        public $category
+        public $categories = null,
+        public $company = null,
+        public $project = null,
+        public $category = null,
+        public $page = null
     )
     {
         //

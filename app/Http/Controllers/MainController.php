@@ -50,6 +50,7 @@ class MainController extends Controller
         $page = new Page();
         $page->title = $category->name;
         $page->description = $category->description;
+        $page->type = 'category';
 
         return view('single-category',[
             'categories' => Category::all(),
@@ -72,6 +73,7 @@ class MainController extends Controller
         $page = new Page();
         $page->title = $project->name;
         $page->description = 'Подробная информация по ' .$project->name .' на одной странице. Если у вас возникли вопросы - позвоните нам.';
+        $page->type = 'project';
 
         return view('single-project', [
             'project' => $project,

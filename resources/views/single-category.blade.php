@@ -28,7 +28,13 @@
                 <x-comp.empty-set></x-comp.empty-set>
             @endif
             <div class="col-12 col-md-4 col-lg-4">
-                <x-comp.project-sidebar :categories="$categories" :company="$company"></x-comp.project-sidebar>
+                <x-comp.project-sidebar 
+                    :project="$project" 
+                    :category="$category" 
+                    :categories="$categories" 
+                    :company="$company"
+                    :page="$page"
+                ></x-comp.project-sidebar>
             </div>
             
         </div>
