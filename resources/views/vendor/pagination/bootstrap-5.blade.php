@@ -1,11 +1,11 @@
 @if ($paginator->hasPages())
-    <nav class="d-flex justify-items-center justify-content-between" style="background: transparent;">
+    <nav class="d-flex justify-items-center justify-content-between" style="background: transparent;height: unset">
         <div class="d-flex justify-content-between flex-fill d-sm-none">
             <ul class="pagination">
                 {{-- Previous Page Link --}}
                 @if ($paginator->onFirstPage())
                     <li class="page-item disabled" aria-disabled="true">
-                        <span class="page-link">@lang('pagination.previous')</span>
+                        <span class="page-link">« {{__('Previous')}}</span>
                     </li>
                 @else
                     <li class="page-item">
@@ -20,7 +20,7 @@
                     </li>
                 @else
                     <li class="page-item disabled" aria-disabled="true">
-                        <span class="page-link">@lang('pagination.next')</span>
+                        <span class="page-link">{{__('Next')}} »</span>
                     </li>
                 @endif
             </ul>

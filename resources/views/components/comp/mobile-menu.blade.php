@@ -19,7 +19,7 @@
                         <span>{{ $company->city }}</span>
                     </div>
                     <div class="logo">
-                        <img src="http://via.placeholder.com/256x256" alt="">
+                        <img src="{{ $company->logo }}" alt="{{ $company->name }}">
                     </div>
                 </div>
             </div>
@@ -39,6 +39,9 @@
                                     <a href="{{ route('slug_category_page') }}">Каталог услуг</a>
                                 </li>
                                 <li>
+                                    <a href="{{ route('blogCategoriesPage') }}">Статьи</a>
+                                </li>
+                                <li>
                                     <a href="{{ route('portfolio_page') }}">Портфолио</a>
                                 </li>
                                 <li>
@@ -49,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <div class="footer">
+            <div class="footer pt-0">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">

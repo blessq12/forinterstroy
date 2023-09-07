@@ -1,5 +1,5 @@
 nav
-    padding: $navbar-padding
+    padding: 12px 0
     background: $navbar-background
     color: $color-white
     position: sticky
@@ -22,3 +22,22 @@ nav
             width: 100%
             background: #fff
             display: block
+            &:last-child
+                margin-bottom: 0
+    & .logo
+        display: flex
+        color: $color-white
+        text-decoration: none
+        height: 45px
+        width: 45px
+        & img
+            width: 100%
+            margin-right: 12px
+        & .logo-text
+            display: block
+            & h5
+                margin-bottom: 0
+                text-transform: uppercase
+                font-size: 22px
+                font-weight: $font-weight-semibold
+            & span

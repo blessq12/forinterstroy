@@ -3,7 +3,13 @@
         {{-- mobile --}}
         <div class="row d-flex d-md-none d-lg-none">
             <div class="col-6">
-                {{ $company->name }}
+                <a href="{{ route('index_page') }}" class="logo">
+                    <img src="{{ $company->logo }}" alt="{{ $company->name }}">
+                    <div class="logo-text">
+                        <h5>{{ $company->name }}</h5>
+                        <span>{{ $company->city }}</span>
+                    </div>
+                </a>
             </div>
             <div class="col-6 d-flex align-items-center justify-content-end">
                 <button class="burger-menu" onclick="document.querySelector('.mobile-menu').classList.add('show')">

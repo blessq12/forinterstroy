@@ -15,5 +15,9 @@
         </ul>
     </div>
 </div>
-<recall-form :project='@json($project)' :page='@json($page)'></recall-form>
+<recall-form 
+    :project='@json($project)' 
+    :page='@json($page)' 
+    :category='@json($category)'
+></recall-form>
 

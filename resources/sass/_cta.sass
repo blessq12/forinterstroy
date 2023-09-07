@@ -11,15 +11,12 @@
         & img
             width: 100%
     & .content
-        & h5
-            margin-bottom: 6px
-        & p
-            font-size: 12px
-            margin-bottom: 6px
-        
+        & h5  
+            margin-bottom: 0      
         & span.phone
             font-size: 12px
-            margin-bottom: 6px
+            padding: 12px 0
+            display: block
             & a
                 text-decoration: none
                 color: $primary-color
@@ -28,3 +25,20 @@
             display: flex
             align-items: center
             & li
+                padding: 0 6px
+                &:first-child
+                    padding-left: 0
+                & a
+                    text-decoration: none
+                    color: #fff
+                    & .social-item
+                        border-radius: $default-radius
+                        overflow: hidden
+                        height: 30px
+                        width: 30px
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        & i
+                        color: #fff
+                        font-size: 18px

@@ -20,7 +20,7 @@ class CompanySeeder extends Seeder
                 'name' => 'Forinterstroy',
                 'additional_info' => 'Строительная компания',
                 'description' => 'Строительство деревянных домов, бань, беседок и коттеджей. Любые размеры и количество этажей. Без предоплат. Опытные строители и доступная цена.',
-                'logo' => 'http://via.placeholder.com/152x152',
+                'logo' => '/images/logo.png',
                 // contact
                 'country' => 'Россия',
                 'country_additional' => 'Россия',

@@ -17,7 +17,7 @@
                             </ul>
                         </div>
                         <div class="footer">
-                            <a href="{{ route('catalog_page',['category'=>$category->uri]) }}">Подробнее</a>
+                            <a href="{{ route('slug_category_page',['category'=>$category->uri]) }}">Подробнее</a>
                         </div>
                     </div>
                 </div>
