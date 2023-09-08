@@ -6,7 +6,8 @@
         <div class="row">
             <div class="col-12 col-md-12 col-lg-8">
                 <div class="row">
-                    @if ($articles->total() > 0)
+                    
+                    @if ($articles)
                         @foreach ($articles as $article)
                             <div class="col-12 col-md-6">
                                 <div class="blog-single">
@@ -21,8 +22,10 @@
                                 </div>
                             </div>
                         @endforeach
+                    @else
+                        <x-comp.empty-set></x-comp.empty-set>
                     @endif
-                    <x-comp.empty-set></x-comp.empty-set>
+                   
                 </div>
             </div>
             <div class="col-12 col-md-12 col-lg-4">

@@ -1,0 +1,94 @@
+footer
+    background-size: cover !important
+    background-repeat: no-repeat !important
+    background-position: center !important
+    position: relative
+    color: #fff
+    & a
+        color: #fff
+        text-decoration: none
+    & .overlay
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: rgba(0, 0, 0, .8)
+    & .footer-top
+        position: relative
+        padding: 48px 0
+        & .footer-section
+            margin-bottom: 24px
+            & .header
+                font-size: 18px
+                font-weight: $font-weight-semibold
+                & p
+                    font-size: 12px
+                    font-weight: $font-weight-light
+                & .logo
+                    display: flex
+                    align-items: center
+                    margin-bottom: 12px
+                    & img
+                        height: 40px
+                        width: auto
+                        margin-right: 12px
+                    & .text-logo
+                        & h5
+                            margin-bottom: 0
+                            font-size: 24px
+                            text-transform: uppercase
+                            font-weight: $font-weight-bold
+                        & p
+                            font-weight: $font-weight-light
+                            font-size: 12px
+                            margin-bottom: 0
+                & hr
+                    border-top: 2px solid $primary-color
+                    margin: 0
+                    opacity: 1
+                    width: 50%
+                    margin-bottom: 12px
+                & h5
+                    margin: 0
+                    margin-bottom: 12px
+            & .content
+                & p
+                    font-size: 12px
+                    font-weight: $font-weight-light
+                & ul
+                    @include list-reset
+                    & li
+                        padding: 12px 0
+                        display: flex
+                        align-items: center
+                        border-bottom: $cart-border
+                        &:last-child
+                            border-bottom: 0
+                        & span
+                            width: 30px
+                            height: 30px
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            margin-right: 12px
+                            border: $cart-border
+                            & i
+                                color: #fff
+                        & p
+                            font-size: 12px
+                            margin-bottom: 0
+                & ul.links
+                    & li
+                        & a
+                            display: flex
+                            align-items: center
+                            text-decoration: none
+                            &::before
+                                content: '→'
+                                padding-right: 12px
+    & .footer-copyright
+        background: $bg-dark
+        color: #fff
+        padding: 12px 0
+    
