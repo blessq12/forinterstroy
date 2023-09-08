@@ -12,7 +12,9 @@ class Navbar extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public $company
+        public $company,
+        public $categories,
+        public $slugCategories
     )
     {
         //

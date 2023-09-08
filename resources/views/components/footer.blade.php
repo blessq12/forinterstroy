@@ -62,6 +62,9 @@
                                 <li>
                                     <a href="{{ route('contact_page') }}">Контакты</a>
                                 </li>
+                                <li>
+                                    <a href="{{ route('contact_page') }}">Политика конфиденциальности</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -87,7 +90,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    footer copyrights
+                    <div class="copyright d-block d-md-flex align-items-center justify-content-between">
+                        <p class="m-0">@Copyright. Все права защищены <span class="text-uppercase fw-bold">{{ $company->name }}</span> {{ now()->year }}</p>
+                        <p class="m-0">Разработано: <a href="http://wa.me/79833409040">CODA</a></p>
+                    </div>
                 </div>
             </div>
         </div>
