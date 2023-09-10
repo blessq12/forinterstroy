@@ -7,10 +7,12 @@
                 <span style="font-size: 12px">{{ $company->phone }}</span>
             </div>
             <div class="col-6 d-flex justify-content-end">
-                <div class="fast-whatsapp">
-                    <i class="fab fa-whatsapp"></i>
-                    WhatsApp
-                </div>
+                <a href="{{ $company->whatsapp }}" target="_blank">
+                    <div class="fast-whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp
+                    </div>
+                </a>
             </div>
         </div>
         {{-- tablet --}}
