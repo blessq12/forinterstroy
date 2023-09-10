@@ -17,7 +17,9 @@ class MainController extends Controller
 {
     public function index(Request $request){
         
-        return view('index',[]);
+        return view('index',[
+            'page' => Page::where('uri', $request->getRequestUri())->first()
+        ]);
 
     }
     public function contact(Request $request){

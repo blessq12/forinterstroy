@@ -4,10 +4,11 @@ export default{
         company: Object
     },data:()=>({
         banners: [
-            {id: 1,image: 'http:via.placeholder.com/1920x1080', title: 'First title', description: 'First description'},
-            {id: 2,image: 'http:via.placeholder.com/1921x1081', title: 'Second title', description: 'Second description'}
+            {id: 1,image: '/images/banner-1.jpg', title: 'Форинтерстрой', description: 'Свой деревянный дом - это просто. Предоставляем строительные услуги полного цикла - от создания индивидуального проекта вашего дома, до сдачи его вам в пользование.'},
+            {id: 2,image: '/images/banner-2.jpg', title: 'Свобода решать', description: 'С каждого построенного дома мы жертвуем деньги на благоттворительные фонды, потому что только вместе мы сможем изменить всё'},
+            {id: 3,image: '/images/banner-2.jpg', title: 'Нам не всё равно', description: 'С каждого построенного дома мы жертвуем деньги на благоттворительные фонды, потому что только вместе мы сможем изменить всё'}
         ],
-        currentBanner: 1
+        banner: 1
     })
 }
 </script>
@@ -17,16 +18,27 @@ export default{
         <div class="row">
             <div class="col-12">
                 <div class="hero-banner">
-                    <div class="hero-item" style="background: url('http://via.placeholder.com/1920x1080');" v-for="banner in banners" :key="banner" v-show="currentBanner == banner.id">
+                    <transition-group
+                        enter-active-class="animate__animated animate__fadeIn"
+                        leave-active-class="animate__animated animate__fadeOut"
+                        mode="out-in"
+                    >
+                    <div class="hero-item" 
+                        :style="'background:url('+ item.image +');'" 
+                        v-for="item in banners" 
+                        :key="item.id"
+                        v-show="item.id == banner"
+                    >
                         <div class="overlay"></div>
                         <div class="d-block position-relative text-white pb-4">
-                            <h2 class="title">{{ banner.title }}</h2>
-                            <h6 class="description">{{ banner.description }}</h6>
+                            <h2 class="title">{{ item.title }}</h2>
+                            <h6 class="description">{{ item.description }}</h6>
                         </div>
                     </div>
+                    </transition-group>
                     <div class="pagination">
                         <ul>
-                            <li v-for="item in banners" :key="banner" @click="currentBanner = item.id"></li>
+                            <li v-for="item in banners" :key="banner" @click="banner = item.id" :class="item.id == banner ? 'active' : ''"></li>
                         </ul>
                     </div>
                 </div>
@@ -86,7 +98,7 @@ export default{
 // sub banner
 .sub-banner
     width: 100%
-    min-height: 140px
+    min-height: 120px
     border-radius: 10px
     overflow: hidden
     position: relative
@@ -112,6 +124,8 @@ export default{
         text-transform: uppercase
         color: #fff
         z-index: 2
+        & h5
+            font-weight: 700
     & .image
         width: 100%
         height: 100%
@@ -119,16 +133,16 @@ export default{
         background-position: center !important
         background-size: cover !important
         background-repeat: no-repeat !important
-        transition: all .3s
+        transition: all .5s
     &:hover .image
-        transform: scale(1.1)
+        transform: scale(1.05)
 
 // END sub banner
     
 // hero banner
 .hero-banner
     box-shadow: rgba(50, 50, 93, 0.35) 0px 13px 27px -5px, rgba(0, 0, 0, 0.4) 0px 8px 16px -8px
-    min-height: 550px
+    min-height: 500px
     width: 100%
     overflow: hidden
     border-radius: 10px
@@ -170,10 +184,10 @@ export default{
         justify-content: start
         padding: 24px
     & .title
-        font-size: 48px
+        font-size: 32px
         font-weight: 600
     & .description
-        font-size: 18px
+        font-size: 12px
         font-weight: 300
         width: 100%
         line-height: 1
@@ -198,4 +212,15 @@ export default{
             & img
                 width: 100%
                 object-fit: cover
+
+@media (min-width: 920px)
+    .hero-banner
+        min-height: 550px
+        & .hero-item
+            & .title
+                font-size: 48px
+            & .description
+                font-size: 18px
+    .sub-banner
+        min-height: 160px
 </style>

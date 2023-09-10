@@ -1,4 +1,4 @@
-<x-head></x-head>
+<x-head :page="$page"></x-head>
 <x-topbar :company="$company"></x-topbar>
 <x-navbar
     :company="$company" 

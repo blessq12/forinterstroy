@@ -2,23 +2,59 @@
 @section('content')
 <hero-banner :company='@json($company)'></hero-banner>
 
-<section class="py-5">
+<section class="py-5" style="background: url('https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png')">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <div class="section-title">
-                    <h3>Нам не всё равно!</h3>
-                    <hr>
+            <div class="col-12 col-md-6 col-lg-6 pb-5 p-md-0">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title">
+                            <h3>От проектировки до строительства</h3>
+                            <hr>
+                        </div>
+                        <div class="section-content">
+                            <p>
+                                Опыт работы дает множество преимуществ, главное из которых – надежные, проверенные временем поставщики материалов для строительства и отделки.
+                                Именно с такими компания «ФорИнтерСтрой» и сотрудничает на постоянной основе. Партнерские отношения с региональными производителями бруса, поставщиками отделочных материалов дают не только уверенность в качестве их продукции.
+                            </p>
+                            <ul>
+                                <li>
+                                    <b>Расширенная гарантия включена в договор</b>
+                                </li>
+                                <li>
+                                    <b>Быстрое возведение</b>
+                                </li>
+                                <li>
+                                    <b>Цена не меняется в процессе строительства</b>
+                                </li>
+                                <li>
+                                    <b>Строим без предоплаты</b>
+                                </li>
+                                <li>
+                                    <b>Помощь и сопровождение на всех этапах строительства</b>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="section-content">
-                    <p>С каждого построенного дома мы жертвуем средства на благоттворительность, а именно: в детские дома, детские больницы, потому что нам не всё равно на то, что происходит сейчас в наше с вами время</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6">
+                <div class="from-to">
+                    <div class="image-carts">
+                        <div class="carts-wrap">
+                            <div class="image-cart first">
+                                <img src="/images/construction-project.jpg" alt="">
+                            </div>
+                            <div class="image-cart second">
+                                <img src="/images/random-project.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-{{-- опросник марквиз --}}
-<x-comp.test></x-comp.test>
 <section class="py-5">
     <div class="container">
         <div class="row">
@@ -28,19 +64,22 @@
                     <hr>
                 </div>
                 <div class="section-content">
-                    <p>Посмотрите готовые проекты в нашем каталоге проектов, мы постоянно обновляем его и стараемся держать всегда актуальным</p>
-                    <ul class="category-list">
+                    <p>
+                        Посмотрите готовые проекты домов в нашем каталоге, мы разбили его на категории, чтобы вам было проще ориентироваться в нем 
+                    </p>
+                    <ul class="index-project-categories">
                         @foreach ($categories as $category)
-                            <li>
-                                <a href="">
-                                    <div class="category-item" style="background: url('{{ $category->image }}')">
+                            <li class="index-single-category">
+                                <a href="{{ route('catalog_page', [ 'category' => $category->uri]) }}">
+                                    <div class="index-category-card">
                                         <div class="overlay"></div>
-                                        <div class="d-block position-relative">
-                                            <h5>
-                                                {{ $category->name }}
-                                            </h5>
+                                        <div class="image" style="background: url('{{ $category->image }}')"></div>
+                                        <div class="content">
+                                            <h4>{{ $category->name }}</h4>
+                                            <div class="badge">
+                                                Проектов: {{ $category->projectCount() }} шт
+                                            </div>
                                         </div>
-                                        <span>Проектов: {{ $category->projectCount() }} шт.</span>
                                     </div>
                                 </a>
                             </li>
@@ -50,5 +89,8 @@
             </div>
         </div>
     </div>
+</section>
+<section class="pb-5">
+<x-comp.test></x-comp.test>
 </section>
 @endsection
