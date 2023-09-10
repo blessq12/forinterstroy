@@ -25,8 +25,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(Request $request): void
     {
         \Illuminate\Pagination\Paginator::useBootstrapFive();
-        // View::share('company', Company::first());
-        // View::share('categories', Category::all());
-        // View::share('slugCategories', SlugCategory::all());
+        View::share('company', Company::first());
+        View::share('categories', Category::all());
+        View::share('slugCategories', SlugCategory::all());
     }
 }
