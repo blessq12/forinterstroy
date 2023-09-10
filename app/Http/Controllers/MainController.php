@@ -124,7 +124,6 @@ class MainController extends Controller
         $page->image = '/images/pages-projects-banner.jpg';
 
         return view('single-slug-category',[
-            'slugs' => SlugCategory::all(),
             'slugCategories' => SlugCategory::all(),
             'slugCategory' => $category,
             'slugs' => $slugs,
