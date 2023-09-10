@@ -227,7 +227,7 @@ class MainController extends Controller
 
     // fetch data from old DB
     public function projects(){
-        $content = file_get_contents('https://forinterstroy.ru/projects');
+        $content = file_get_contents('http://mvc.forinterstroy.ru/projects');
         $decoded = json_decode($content);
 
         foreach ($decoded as $key => $value) {
@@ -282,7 +282,7 @@ class MainController extends Controller
         }
     }
     public function slugs(){
-        $content = file_get_contents('https://forinterstroy.ru/slugs');
+        $content = file_get_contents('http://mvc.forinterstroy.ru/slugs');
         $decoded = json_decode($content);
 
         foreach ($decoded as $key => $value){
@@ -318,7 +318,7 @@ class MainController extends Controller
         }
     }
     public function articles(){
-        $content = file_get_contents("https://forinterstroy.ru/articles");
+        $content = file_get_contents("http://mvc.forinterstroy.ru/articles");
         $content = json_decode($content);
 
         foreach ($content as $key => $value){
