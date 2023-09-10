@@ -36,9 +36,9 @@ Route::domain(env('APP_URL'))->group(function(){
         Route::get('/privacy', 'privacy')->name('privacy_page');
         
         // fetch data from old DB
-        Route::get('/projects', 'projects');
-        Route::get('/slugs', 'slugs');
-        Route::get('/articles', 'articles');
+        // Route::get('/projects', 'projects');
+        // Route::get('/slugs', 'slugs');
+        // Route::get('/articles', 'articles');
 
     });
 });

@@ -197,23 +197,23 @@ class MainController extends Controller
             'page' => $page
         ]);
     }
-    public function portfolio_setup(Request $request){
-        $imagesPath = '/images/portfolio/';        
-        $images = scandir(public_path() . $imagesPath);
-        $portfolioItem = [];
-        foreach ($images as $key => $image) {
-            if ($image !== '.' && $image !== '..' && $image !== '.DS_Store'){
-                $portfolioItem[] = ['image' => $imagesPath .$image];
-            }
-        }
-        foreach ($portfolioItem as $key => $value) {
-            $pItem = new PortfolioItem();
-            $pItem->image = $value['image'];
-            if ($pItem->save()){
-                echo 'item saved';
-            }
-        }
-    }
+    // public function portfolio_setup(Request $request){
+    //     $imagesPath = '/images/portfolio/';        
+    //     $images = scandir(public_path() . $imagesPath);
+    //     $portfolioItem = [];
+    //     foreach ($images as $key => $image) {
+    //         if ($image !== '.' && $image !== '..' && $image !== '.DS_Store'){
+    //             $portfolioItem[] = ['image' => $imagesPath .$image];
+    //         }
+    //     }
+    //     foreach ($portfolioItem as $key => $value) {
+    //         $pItem = new PortfolioItem();
+    //         $pItem->image = $value['image'];
+    //         if ($pItem->save()){
+    //             echo 'item saved';
+    //         }
+    //     }
+    // }
     public function portfolio(Request $request){
         $page = Page::where('uri', $request->getRequestUri())->first();
         $page->image = '/images/pages-projects-banner.jpg';
