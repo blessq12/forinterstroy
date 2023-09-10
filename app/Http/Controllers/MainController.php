@@ -147,9 +147,9 @@ class MainController extends Controller
         $page->image = '/images/pages-projects-banner.jpg';
         return view('single-slug', [
             'slug' => $slug,
-            'category' => $slug->slugCategory,
+            'slugCategory' => $slug->slugCategory,
             'page' => $page,
-            'categories' => SlugCategory::all()
+            'slugCategories' => SlugCategory::all()
         ]);
     }
     // End Slugs
