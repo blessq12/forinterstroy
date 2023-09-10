@@ -6,8 +6,11 @@
                 <i class="fa fa-phone" style="padding-right: 6px"></i>
                 <span style="font-size: 12px">{{ $company->phone }}</span>
             </div>
-            <div class="col-6 text-end">
-                Fast links
+            <div class="col-6 d-flex justify-content-end">
+                <div class="fast-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </div>
             </div>
         </div>
         {{-- tablet --}}

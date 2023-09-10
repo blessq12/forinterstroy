@@ -23,8 +23,10 @@ class MainController extends Controller
 
     }
     public function contact(Request $request){
+        $page = Page::where('uri', $request->getRequestUri())->first();
+        $page->image = '/images/pages-projects-banner.jpg';
         return view('contact',[
-            'page' => Page::where('uri', $request->getRequestUri())->first() 
+            'page' => $page
         ]);
     }
     // Projects
@@ -32,10 +34,12 @@ class MainController extends Controller
         // check query param and call category action if isset
         if ($request->category){
             return $this->callAction('category',$request->query());
-        }        
+        }
+        $page = Page::where('uri', $request->getRequestUri())->first();
+        $page->image = '/images/pages-projects-banner.jpg';
         return view('catalog',[
             'categories' => Category::all(),
-            'page' => Page::where('uri', $request->getRequestUri())->first()
+            'page' => $page
         ]);
     }
     public function category($query){
@@ -54,6 +58,7 @@ class MainController extends Controller
         $page->title = $category->name;
         $page->description = $category->description;
         $page->type = 'category';
+        $page->image = '/images/pages-projects-banner.jpg';
 
         return view('single-category',[
             'categories' => Category::all(),
@@ -77,6 +82,7 @@ class MainController extends Controller
         $page->title = $project->name;
         $page->description = 'Подробная информация по ' .$project->name .' на одной странице. Если у вас возникли вопросы - позвоните нам.';
         $page->type = 'project';
+        $page->image = '/images/pages-projects-banner.jpg';
 
         return view('single-project', [
             'project' => $project,
@@ -91,10 +97,11 @@ class MainController extends Controller
         if ($request->category){
             return $this->callAction('singleSlugCategory',[ 'category' => $request->category ]);
         }
-
+        $page = Page::where('uri', $request->getRequestUri())->first();
+        $page->image = '/images/pages-projects-banner.jpg';
         return view('slug-categories',[
             'slugCategories' => SlugCategory::all(),
-            'page' => Page::where('uri', $request->getRequestUri())->first()
+            'page' => $page
         ]);
     }
     public function singleSlugCategory($category){
@@ -114,11 +121,12 @@ class MainController extends Controller
         $page->title = $category->name;
         $page->description = $category->description;
         $page->type = 'slug-category';
+        $page->image = '/images/pages-projects-banner.jpg';
 
         return view('single-slug-category',[
             'slugs' => SlugCategory::all(),
-            'categories' => SlugCategory::all(),
-            'category' => $category,
+            'slugCategories' => SlugCategory::all(),
+            'slugCategory' => $category,
             'slugs' => $slugs,
             'page' => $page
         ]);
@@ -137,6 +145,7 @@ class MainController extends Controller
         $page->title = $slug->name;
         $page->description = "Подробная информация по услуге " . $slug->name . ' на одной странице. Если не нашли нужную услугу - позвоните нам.';
         $page->type = 'slug';
+        $page->image = '/images/pages-projects-banner.jpg';
         return view('single-slug', [
             'slug' => $slug,
             'category' => $slug->slugCategory,
@@ -149,10 +158,12 @@ class MainController extends Controller
     // Articles
     public function blogCategories(Request $request){
 
+        $page = Page::where('uri', $request->getRequestUri())->first();
+        $page->image = '/images/pages-projects-banner.jpg';
         return view('blog-categories',[
             'articleCategories' => ArticleCategory::all(),
             'articles' => Article::all(),
-            'page' => Page::where('uri', $request->getRequestUri())->first()
+            'page' => $page
         ]);
     }
     public function singlerAticle(Request $request){
@@ -166,6 +177,7 @@ class MainController extends Controller
         $page = new Page();
         $page->title = $article->name;
         $page->description = $article->description;
+        $page->image = '/images/pages-projects-banner.jpg';
 
         return view('single-article',[
             'article' => $article,
@@ -176,7 +188,15 @@ class MainController extends Controller
     // End Articles
 
     // Portfolio
+    // Privacy
+    public function privacy(Request $request){
 
+        $page = Page::where('uri', $request->getRequestUri())->first();
+        $page->image = '/images/pages-projects-banner.jpg';
+        return view('privacy-page',[
+            'page' => $page
+        ]);
+    }
     public function portfolio_setup(Request $request){
         $imagesPath = '/images/portfolio/';        
         $images = scandir(public_path() . $imagesPath);
@@ -195,9 +215,10 @@ class MainController extends Controller
         }
     }
     public function portfolio(Request $request){
-
+        $page = Page::where('uri', $request->getRequestUri())->first();
+        $page->image = '/images/pages-projects-banner.jpg';
         return view('portfolio',[
-            'page' => Page::where('uri', $request->getRequestUri())->first(),
+            'page' => $page,
             'items' => PortfolioItem::all()
         ]);
     }

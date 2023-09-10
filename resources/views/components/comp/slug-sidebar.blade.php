@@ -4,12 +4,12 @@
     </div>
     <div class="content">
         <ul>
-            @foreach($categories as $category)
+            @foreach($slugCategories as $slugCategory)
                 <li>
-                    <a href="{{ route('slug_category_page', ['category' => $category->uri]) }}">
-                        {{ $category->name }}
+                    <a href="{{ route('slug_category_page', ['category' => $slugCategory->uri]) }}">
+                        {{ $slugCategory->name }}
                         <span>
-                            {{ $category->slugCount() }}
+                            {{ $slugCategory->slugCount() }}
                         </span>
                     </a>
                 </li>
@@ -20,5 +20,5 @@
 <recall-form 
     :project='@json($slug)' 
     :page='@json($page)' 
-    :category='@json($category)'
+    :category='@json($slugCategory)'
 ></recall-form>

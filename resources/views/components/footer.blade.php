@@ -63,7 +63,7 @@
                                     <a href="{{ route('contact_page') }}">Контакты</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('contact_page') }}">Политика конфиденциальности</a>
+                                    <a href="{{ route('privacy_page') }}">Политика конфиденциальности</a>
                                 </li>
                             </ul>
                         </div>

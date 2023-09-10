@@ -1,4 +1,4 @@
-<div class="page-banner bg-dark text-white">
+<div class="page-banner bg-dark text-white" style="background: url('{{ $page->image }}')">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">

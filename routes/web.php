@@ -32,6 +32,8 @@ Route::domain(env('APP_URL'))->group(function(){
         Route::get('/blog-single', 'singlerAticle')->name('singleArticlePage');
         // Portfolio
         Route::get('/portfoli' ,'portfolio')->name('portfolio_page');
+        // Privacy
+        Route::get('/privacy', 'privacy')->name('privacy_page');
         
         // fetch data from old DB
         Route::get('/projects', 'projects');
