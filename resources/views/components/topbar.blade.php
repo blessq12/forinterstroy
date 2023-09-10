@@ -3,7 +3,7 @@
         {{-- mobile first --}}
         <div class="row d-flex d-md-none d-lg-none">
             <div class="col-6 d-flex align-items-center">
-                <i class="fa fa-phone"></i>
+                <i class="fa fa-phone" style="padding-right: 6px"></i>
                 <span style="font-size: 12px">{{ $company->phone }}</span>
             </div>
             <div class="col-6 text-end">

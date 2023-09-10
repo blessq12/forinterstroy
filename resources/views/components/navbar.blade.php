@@ -6,8 +6,8 @@
                 <a href="{{ route('index_page') }}" class="logo">
                     <img src="{{ $company->logo }}" alt="{{ $company->name }}">
                     <div class="logo-text">
-                        <h5>{{ $company->name }}</h5>
-                        <span>{{ $company->city }}</span>
+                        <h5 class="m-0">{{ $company->name }}</h5>
+                        <span style="font-size: 10px">Строительная компания {{ $company->city }}</span>
                     </div>
                 </a>
             </div>

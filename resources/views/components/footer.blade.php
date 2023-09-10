@@ -100,6 +100,24 @@
     </div>
 </footer>
 </div>
+
+<div class="marquiz__container d-none">
+    <a class="marquiz__button marquiz__button_blicked marquiz__button_rounded marquiz__button_shadow marquiz__button_fixed marquiz__button_fixed-left" href="#popup:marquiz_5b7cfe118be79d00534f31d9" data-fixed-side="left" data-alpha-color="rgba(248, 58, 75, 0.5)" data-color="#f83a4b" data-text-color="#ffffff">Расчет стоимости</a>
+</div>
+
+  
+<script src="//script.marquiz.ru/v1.js" type="application/javascript"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  Marquiz.init({ 
+    id: '5b7cfe118be79d00534f31d9', 
+    autoOpen: false, 
+    autoOpenFreq: 'once', 
+    openOnExit: false 
+  });
+});
+</script>
+
 @vite('resources/js/app.js')
 </body>
 </html>

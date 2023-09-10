@@ -1,0 +1,36 @@
+.test-container
+    border: $cart-border
+    border-radius: $default-radius
+    min-height: 200px
+    background: url('https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png')
+    padding: 24px
+    display: flex
+    align-items: center
+    overflow: hidden
+    & h4
+        font-weight: $font-weight-bold
+        font-size: 24px
+        margin-bottom: 12px
+    & p
+        margin-bottom: 0
+        font-size: 14px
+    & a
+        width: fit-content
+        padding: 12px 24px
+        font-size: 18px
+        font-weight: $font-weight-semibold
+        display: flex
+        align-items: center
+        white-space: nowrap
+        background: $primary-color
+        color: #fff
+        text-decoration: none
+        &::after
+            content: '→'
+            padding-left: 6px
+            transition: all .3s
+        &:hover::after
+            padding-left: 12px
+
+
+    
