@@ -18,7 +18,7 @@
     </div>
 </div>
 <recall-form 
-    :project='@json($slug)' 
+    :project="null" 
     :page='@json($page)' 
     :category='@json($slugCategory)'
 ></recall-form>
