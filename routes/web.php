@@ -31,7 +31,7 @@ Route::domain(env('APP_URL'))->group(function(){
         Route::get('/blog', 'blogCategories')->name('blogCategoriesPage');
         Route::get('/blog-single', 'singlerAticle')->name('singleArticlePage');
         // Portfolio
-        Route::get('/portfoli' ,'portfolio')->name('portfolio_page');
+        Route::get('/portfoli' ,'portfolio_setup')->name('portfolio_page');
         // Privacy
         Route::get('/privacy', 'privacy')->name('privacy_page');
         
