@@ -1,4 +1,4 @@
-<div class="mobile-menu">
+<div class="mobile-menu hide">
     <div class="container py-3">
         <div class="row">
             <div class="col-12 justify-content-between align-items-center d-flex pb-3">
@@ -7,7 +7,7 @@
                         <h4>{{ $company->phone }}</h4>
                     </a>
                 </div>
-                <button class="close-menu" onclick="document.querySelector('.mobile-menu').classList.remove('show')">
+                <button class="close-menu" onclick="document.querySelector('.mobile-menu').classList.add('hide')">
                     <span></span>
                     <span></span>
                 </button>

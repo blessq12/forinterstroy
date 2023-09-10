@@ -12,7 +12,7 @@
                 </a>
             </div>
             <div class="col-6 d-flex align-items-center justify-content-end">
-                <button class="burger-menu" onclick="document.querySelector('.mobile-menu').classList.add('show')">
+                <button class="burger-menu" onclick="document.querySelector('.mobile-menu').classList.remove('hide')">
                     <span></span>
                     <span></span>
                     <span></span>
