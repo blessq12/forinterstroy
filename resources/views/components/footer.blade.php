@@ -101,11 +101,36 @@
 </footer>
 </div>
 
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ 
+    ym(75533479, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true,
+         webvisor:true
+    });
+ </script>
+ <noscript><div><img src="https://mc.yandex.ru/watch/75533479" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+ <!-- /Yandex.Metrika counter -->
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MKPX5C52L3"></script>
+     <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+ 
+         gtag('config', 'G-MKPX5C52L3');
+     </script>
+
+{{-- marquiz --}}
 <div class="marquiz__container d-none">
     <a class="marquiz__button marquiz__button_blicked marquiz__button_rounded marquiz__button_shadow marquiz__button_fixed marquiz__button_fixed-left" href="#popup:marquiz_5b7cfe118be79d00534f31d9" data-fixed-side="left" data-alpha-color="rgba(248, 58, 75, 0.5)" data-color="#f83a4b" data-text-color="#ffffff">Расчет стоимости</a>
 </div>
 
-  
 <script src="//script.marquiz.ru/v1.js" type="application/javascript"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -117,6 +142,8 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
+
+{{-- end marquiz --}}
 
 @vite('resources/js/app.js')
 </body>
