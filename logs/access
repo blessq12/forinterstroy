@@ -107,3 +107,11 @@
 127.0.0.1 - - [05/Oct/2023:15:42:17 +0700] "GET /images/slugs-banner.jpg HTTP/1.1" 304 -
 127.0.0.1 - - [05/Oct/2023:15:42:17 +0700] "GET /images/portfolio-banner.jpg HTTP/1.1" 304 -
 127.0.0.1 - - [05/Oct/2023:15:42:17 +0700] "GET /images/contact-banner.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2023:15:52:12 +0700] "GET / HTTP/1.1" 200 82294
+127.0.0.1 - - [05/Oct/2023:15:52:13 +0700] "GET /build/assets/app-fce160f4.css HTTP/1.1" 200 430576
+127.0.0.1 - - [05/Oct/2023:15:52:13 +0700] "GET /images/pochta_bank.jpeg HTTP/1.1" 304 -
+127.0.0.1 - - [05/Oct/2023:15:52:13 +0700] "GET /build/assets/app-dcacba9f.css HTTP/1.1" 200 3133
+127.0.0.1 - - [05/Oct/2023:15:52:13 +0700] "GET /build/assets/app-17e739ce.js HTTP/1.1" 200 267942
+127.0.0.1 - - [05/Oct/2023:15:52:13 +0700] "GET /build/assets/fa-solid-900-886c8611.woff2 HTTP/1.1" 200 150020
+127.0.0.1 - - [05/Oct/2023:15:52:13 +0700] "GET /build/assets/fa-regular-400-9169d8be.woff2 HTTP/1.1" 200 24488
+127.0.0.1 - - [05/Oct/2023:15:52:13 +0700] "GET /build/assets/fa-brands-400-faae6fc0.woff2 HTTP/1.1" 200 109808
