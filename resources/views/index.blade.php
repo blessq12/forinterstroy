@@ -91,6 +91,17 @@
     </div>
 </section>
 <section class="pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="bank-section">
+                    <img src="{{ asset('/images/pochta_bank.jpeg') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="pb-5">
 <x-comp.test></x-comp.test>
 </section>
 @endsection
