@@ -90,7 +90,7 @@
         </div>
     </div>
 </section>
-<section class="pb-5">
+{{-- <section class="pb-5">
     
     <div class="container">
         <div class="row">
@@ -101,7 +101,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <section class="pb-5">
 <x-comp.test></x-comp.test>
 </section>
