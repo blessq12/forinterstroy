@@ -216,9 +216,13 @@ class MainController extends Controller
     public function portfolio(Request $request){
         $page = Page::where('uri', $request->getRequestUri())->first();
         $page->image = '/images/pages-projects-banner.jpg';
+
+        $portfolioPath = public_path() . '/images/portfolio';
+        $portfolioItems = array_diff(scandir($portfolioPath), array('..', '.'));
+
         return view('portfolio',[
             'page' => $page,
-            'items' => PortfolioItem::all()
+            'items' => $portfolioItems
         ]);
     }
 
