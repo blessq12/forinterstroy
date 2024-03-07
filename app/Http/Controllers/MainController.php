@@ -18,12 +18,12 @@ class MainController extends Controller
     public function index(Request $request){
         
         return view('index',[
-            'page' => Page::where('uri', $request->getRequestUri())->first()
+            'page' => Page::where('uri', '/' )->firstOrFail()
         ]);
 
     }
     public function contact(Request $request){
-        $page = Page::where('uri', $request->getRequestUri())->first();
+        $page = Page::where('uri', '/contact')->firstOrFail();
         $page->image = '/images/pages-projects-banner.jpg';
         return view('contact',[
             'page' => $page
@@ -35,7 +35,7 @@ class MainController extends Controller
         if ($request->category){
             return $this->callAction('category',$request->query());
         }
-        $page = Page::where('uri', $request->getRequestUri())->first();
+        $page = Page::where('uri', '/catalog')->firstOrFail();
         $page->image = '/images/pages-projects-banner.jpg';
         return view('catalog',[
             'categories' => Category::all(),

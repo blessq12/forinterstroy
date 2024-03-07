@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Crm\ProjectController;
+use App\Http\Controllers\Crm\SlugController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
 use GuzzleHttp\Middleware;
@@ -34,7 +36,6 @@ Route::domain(env('APP_URL'))->group(function(){
         Route::get('/portfoli' ,'portfolio')->name('portfolio_page');
         // Privacy
         Route::get('/privacy', 'privacy')->name('privacy_page');
-        
 
     });
 });
@@ -45,10 +46,10 @@ Route::domain('crm.' .env('APP_URL'))->group(function(){
     Route::middleware('auth')->group(function(){
         Route::controller(AdminController::class)->group(function(){
             Route::get('/', 'dashboard')->name('dashboard');
-            Route::get('/projects', 'projects');
-            Route::get('/{category}/all', 'projectCategory');
-            Route::get('/slugs', 'slugs');
-            Route::get('/{category}/all', 'slugs');
+            
+            Route::resource('slug', SlugController::class);
+            Route::resource('project', ProjectController::class);
+
             // logout route
             Route::get('/user/logout', [LoginController::class, 'logoutUser'])->name('crm_logout');
         });
